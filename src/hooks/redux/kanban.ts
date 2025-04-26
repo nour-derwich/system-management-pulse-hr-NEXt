@@ -34,7 +34,7 @@ export const fetchKanbanData = createAsyncThunk('kanban/fetchKanbanData', async 
 
 export const kanbanSlice = createSlice({
     name: 'kanban',
-    initialState:{ kanbanData:[] as KanbanColumnType[]},
+    initialState:{ kanbanData:kanbanColumn as KanbanColumnType[]},
     reducers: {
         moveTask: ( state ,action) => {
             const { currentTask, destinationColumn, sourceColumn, newOrder } = action.payload;

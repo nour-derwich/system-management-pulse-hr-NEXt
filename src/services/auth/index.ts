@@ -19,17 +19,20 @@ class AuthServiceClass {
     login = async (data: { email: string; password: string }) => {
         const response = await this.AuthService.postReq("/login", data);
 
-        return response.data;
+        return response;
     };
 
     useLoginMutation = () => {
         const   router = useRouter();
         return useMutation(this.login, {
+            
+
             onSuccess: (data) => { 
                 setTokenCookie(data.token);
                 router.push(ROUTING.DASHBOARD.MAIN);
             },
             onError: (error) => {
+                console.log(error);
                 alert("error");
             },
         });
