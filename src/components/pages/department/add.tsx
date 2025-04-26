@@ -56,9 +56,9 @@ const AddDepartment = () => {
         <DynamicSelectField
           label={"Manager"}
           selectData={emplacementList}
-          formRegistartion={register("manager_id")}
-          isError={errors?.manager_id ? true : false}
-          errorMessage={errors?.manager_id?.message}
+          formRegistartion={register("manager")}
+          isError={errors?.manager ? true : false}
+          errorMessage={errors?.manager?.message}
            targetMenu="Manager"
 
         />

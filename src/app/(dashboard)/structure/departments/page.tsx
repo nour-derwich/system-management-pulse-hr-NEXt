@@ -59,20 +59,24 @@ const departementMenu: ListingMenuItemType[] = [
 
 
 const MyTable = () => {
-
   const { data, error, isLoading } = DepService.useDepartmentListQuery();
+  console.log("Data:", data); 
 
-
- 
   return (
     <Stack spacing={3}>
       <PagerHeader title="Départements" />
       <TableUtils />
-      <Grid container spacing={2}>
-        {data?.departments.map((item) => {
-          return <DepartmentCard department={item} />;
-        })}
-      </Grid>
+      
+      {isLoading && <Typography>Chargement...</Typography>}
+      {error && <Typography color="error">Une erreur s'est produite lors du chargement des départements</Typography>}
+      
+      {data && data.departments && (
+        <Grid container spacing={2}>
+          {data.departments.map((item) => (
+            <DepartmentCard key={item.id} department={item} />
+          ))}
+        </Grid>
+      )}
     </Stack>
   );
 };
