@@ -3,7 +3,7 @@ import { getTokenCookie } from './authCookies';
 
 
 const http = axios.create({
-    baseURL: 'http://localhost:8000/api/',
+    baseURL: 'http://localhost:5000/api/',
     timeout: 30000,
     headers: {
         Accept: 'application/json',

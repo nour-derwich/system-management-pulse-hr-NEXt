@@ -13,7 +13,7 @@ export const API_SECTIONS = {
   employee: "/employee",
   auth: "/auth",
   structure: {
-    department: "/structure/department",
+    department: "/departments",
     positions: "/structure/position",
 
   },
